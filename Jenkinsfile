@@ -30,12 +30,6 @@ pipeline {
             }
         }
 
-        stage('Prisma generate') {
-            steps {
-                sh 'npx prisma generate'
-            }
-        }
-
         stage('Unit tests') {
             steps {
                 sh 'npm run test:coverage -- --outputFile.junit=reports/junit-unit.xml'
